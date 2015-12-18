@@ -3,24 +3,18 @@
  */
 {
     //Required. Inputs the module expects.
-    "inputs": [
-        //e.g.
-        /*
-        {
-            "id": "from",
-            "title":"From"
-        }
-        */
-    ],
+    "inputs": [],
     //Required. Outputs the module emits.
     "outputs": [
-      //e.g.
-      /*
         {
-            "id": "from",
-            "title":"From"
+            "id": "folder_id",
+            "title":"Folder ID"
+        },
+        {
+            "id": "title",
+            "title":"Title"
         }
-      */
     ],
+    "icon": "dex-instapaper",
     "title": "Instapaper List Folders" /* Required.A display name for the module */
 }
