@@ -1,11 +1,15 @@
 {
   "name": "instapaper-list-folders",
   "version": "0.0.1",
-  "description": "",
+  "description": "This module lists the folders in a user's Instapaper account",
   "main": "index.js",
-  "author": "Alexander",
-  "license": "ISC",
+  "author": "Run Dexter, Inc",
+  "license": "MIT",
   "private": true,
+  "repository": {
+    "type":"git",
+    "url":"https://github.com/rundexter/instapaper-list-folders"
+  },
   "dependencies": {
     "instapaper": "^1.0.0",
     "lodash": "^3.10.1"
