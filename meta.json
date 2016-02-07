@@ -3,7 +3,11 @@
  */
 {
     //Required. Inputs the module expects.
-    "inputs": [],
+    "inputs": [{
+        "id":"title",
+        "title":"Title",
+        "description":"Optional. Retrieve a folder with the specified title"
+    }],
     //Required. Outputs the module emits.
     "outputs": [
         {

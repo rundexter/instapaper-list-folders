@@ -24,6 +24,7 @@ module.exports = {
     run: function(step, dexter) {
         var auth   = dexter.provider('instapaper').credentials() 
           , client = Instapaper(auth.consumer_key, auth.consumer_secret, {apiUrl: apiUrl})
+          , filter = step.input('title').first()
           , self   = this
         ;
 
@@ -32,7 +33,11 @@ module.exports = {
         client.setOAuthCredentials(auth.access_token, auth.access_token_secret);
         client.bookmarks.client.request('/folders/list')
             .then(function (folders) {
-                self.complete(util.pickResult({ folders: folders }, pickOutputs));
+                folders = util.pickResult({ folders: folders }, pickOutputs);
+                if(filter) {
+                    folders = _.where(folders, { title: filter });
+                }
+                self.complete(folders);
             })
             .catch(function(err) {
                 self.fail(err);
